@@ -1,0 +1,129 @@
+.main-page {
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 40px;
+        background: white;
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+
+        .input_modal {
+            display: flex;
+            flex-direction: column;
+            margin: 10px auto;
+            width: 50%;
+
+            input {
+                margin-top: 15px;
+            }
+
+        }
+
+        .btn_container {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+
+            button {
+                padding: 10px 15px;
+                cursor: pointer;
+                margin: 15px;
+                border-radius: 10px;
+                transition: all 0.2s ease-in-out;
+            }
+
+            .confirm {
+                border: 2px solid orange;
+                background: orange;
+
+                &:hover {
+                    background: white;
+                }
+            }
+
+            .cancel {
+                border: 2px solid orange;
+                background: white;
+
+                &:hover {
+                    background: orange;
+                }
+            }
+        }
+    }
+
+    .background {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: -10;
+    }
+
+    .page_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            margin-right: 70px;
+            margin-top: 70px;
+
+        }
+
+        h2 {
+            font-size: 18px;
+            color: orange;
+            font-weight: bold;
+            margin: 0 0 30px 0;
+        }
+
+        .user_infos_container {
+            margin-right: 90px;
+
+            div {
+                margin: 7px 0;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+
+            .btn_container {
+                margin-top: 30px;
+
+                .update_btn {
+                    background: orange;
+                    margin-right: 20px;
+
+                    &:hover {
+                        background: $color-2;
+                    }
+
+                }
+
+                .pwd_btn {
+                    background: $color-2;
+
+                    &:hover {
+                        background: orange;
+                    }
+                }
+
+                button {
+                    border: 1px solid orange;
+                    padding: 10px 15px;
+                    border-radius: 15px;
+                    font-size: 16px;
+                    box-shadow: 2px 2px 10px rgb(209, 209, 209);
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}

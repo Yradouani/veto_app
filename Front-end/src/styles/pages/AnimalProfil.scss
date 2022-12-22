@@ -1,0 +1,123 @@
+.animal_profil {
+    .return {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        font-size: 17px;
+        font-weight: bold;
+
+        svg {
+            margin-right: 5px;
+        }
+    }
+
+    .modal {
+        position: absolute;
+        background: $color-1;
+        padding: 50px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h3 {
+            margin-bottom: 20px;
+        }
+
+        .btn-container {
+            margin-top: 20px;
+
+            button {
+                background: white;
+                border: none;
+                cursor: pointer;
+                padding: 10px 15px;
+                font-size: 16px;
+                margin: 15px 10px;
+                border-radius: 10px;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    background: rgb(67, 67, 252);
+                    color: white;
+                }
+            }
+        }
+    }
+
+    h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            margin-right: 20px;
+        }
+    }
+
+    .profil_content {
+        background-image: url('../../../public/backdog.jpg');
+        background-position: center center;
+        background-size: cover;
+        width: 400px;
+        margin: 30px auto;
+        padding: 40px;
+
+        .profil_infos {
+            background: white;
+            padding: 30px;
+        }
+
+        div {
+            margin: 5px 0;
+
+            span {
+                font-weight: bold;
+                color: black;
+            }
+
+            .vaccine_date {
+                background-color: red;
+                padding: 4px;
+            }
+        }
+
+        .btn_container {
+            display: flex;
+            justify-content: center;
+            margin: 20px auto;
+            flex-direction: column;
+
+            .btn_update {
+                display: flex;
+                justify-content: center;
+
+                button {
+                    margin: 10px;
+                    padding: 10px 15px;
+                }
+            }
+
+            button {
+                background: $color-1;
+                border: none;
+                padding: 10px;
+                color: white;
+                margin: 10px;
+                font-size: 15px;
+                cursor: pointer;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    background: rgb(132, 203, 250);
+                    color: black;
+                }
+            }
+        }
+    }
+}

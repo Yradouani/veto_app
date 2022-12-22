@@ -1,0 +1,175 @@
+.customer-profile {
+    height: 100%;
+
+    .card_container {
+        width: 50%;
+        margin: 50px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        padding: 30px;
+
+        hr {
+            height: 1px;
+            width: 80%;
+            margin: 40px 0 0 0;
+        }
+
+        .infos_container {
+            display: flex;
+            flex-direction: column;
+            width: 85%;
+
+            .btn_container {
+                margin-top: 40px;
+                text-align: center;
+
+                button {
+                    margin: 0 10px;
+                    background: orange;
+                    border: none;
+                    padding: 10px 15px;
+                    font-size: 16px;
+                    cursor: pointer;
+                    color: white;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        background: rgb(252, 224, 173);
+                        color: black;
+                    }
+                }
+            }
+
+            div {
+                margin: 5px 0;
+
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 25px;
+            margin: 0;
+            color: orange;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+
+        .animal_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .animal_info_container {
+                background: rgb(255, 255, 255);
+                margin: 10px;
+                color: rgb(0, 0, 0);
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                width: 100px;
+                border: 1px solid black;
+
+                span {
+                    font-weight: bold;
+                }
+
+                button {
+                    border: none;
+                    background: orange;
+                    color: wheat;
+                    padding: 5px;
+                    margin-top: 20px;
+                    font-size: 15px;
+                    cursor: pointer;
+                    transition: all 0.2s ease-in-out;
+
+                    &:hover {
+                        background: rgb(252, 197, 130);
+                        color: black;
+                    }
+                }
+            }
+        }
+    }
+
+    .noanimal {
+        .add_new_client_content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: orange;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.2s ease-in-out;
+
+            svg {
+                font-size: 25px;
+            }
+
+            &:hover {
+                color: rgb(249, 186, 69) !important;
+            }
+        }
+    }
+
+    .open_modal {
+        display: flex;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 30px;
+        border: 1px solid black;
+
+        h2 {
+            text-align: center;
+        }
+
+        tr,
+        td {
+            padding: 7px;
+        }
+
+        .btn_container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+
+            button,
+            input[type="submit"] {
+                border: none;
+                background: orange;
+                padding: 10px;
+                cursor: pointer;
+                font-size: 15px;
+                margin: 10px;
+                color: white;
+                transition: all 0.2s ease-in-out;
+
+                &:hover {
+                    background: rgb(251, 182, 53);
+                }
+            }
+        }
+    }
+
+    .close_modal {
+        display: none;
+    }
+}

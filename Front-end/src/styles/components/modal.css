@@ -1,0 +1,84 @@
+.customer .page_content tr,
+.customer .page_content td {
+  padding: 5px;
+}
+
+.customer .page_content .modal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 60px 40px;
+}
+
+.customer .page_content .modal_header svg {
+  cursor: pointer;
+}
+
+.customer .page_content .open_modal {
+  width: 90%;
+  background: white;
+  color: black;
+  position: absolute;
+  border: 1px solid black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 70px 30px;
+}
+
+.customer .page_content .open_modal form {
+  text-align: center;
+}
+
+.customer .page_content .open_modal input[type=submit] {
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  background: green;
+  margin: 20px auto;
+}
+
+.customer .page_content .open_modal .instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  color: red;
+  padding: 0.25rem;
+  position: relative;
+}
+
+.customer .page_content .open_modal .instructions svg {
+  margin-right: 5px;
+}
+
+.customer .page_content .open_modal .offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.customer .page_content .open_modal .hide {
+  display: none;
+}
+
+.customer .page_content .open_modal .valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.customer .page_content .open_modal .invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.customer .page_content .open_modal .errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.customer .page_content .close_modal {
+  display: none;
+}
+/*# sourceMappingURL=modal.css.map */

@@ -1,0 +1,107 @@
+.animals {
+    h1 {
+        text-align: center;
+        margin: 50px auto;
+    }
+
+    #search_field {
+        text-align: center;
+        background: white;
+        width: 220px;
+        margin: auto;
+        height: 30px;
+        display: flex;
+        align-items: center;
+
+        input {
+            border: none;
+            font-size: 15px;
+            width: 90px;
+            outline: none;
+            color: black;
+        }
+
+        svg {
+            margin: auto 10px;
+        }
+    }
+
+    .global_cards_container {
+        flex-wrap: wrap;
+        width: 90%;
+        margin: 50px auto;
+        display: flex;
+        justify-content: center;
+
+        .card_content {
+            background-image: url('../../../public/backdog.jpg');
+            background-position: center center;
+            background-size: cover;
+            padding: 40px;
+            border: 1px solid $color-5;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            margin: 10px;
+
+            .card_content_container {
+                background: white;
+                padding: 20px;
+            }
+
+            .card_infos {
+
+                div {
+                    margin: 5px auto;
+
+                    span {
+                        font-weight: bold;
+                    }
+                }
+
+                .btn_container {
+                    margin: 20px auto;
+                    text-align: center;
+
+                    button {
+                        margin: 10px;
+                        background: $color-5;
+                        color: white;
+                        border: none;
+                        padding: 10px 15px;
+                        font-size: 15px;
+                        cursor: pointer;
+                        transition: all 0.2s ease-in-out;
+
+                        &:hover {
+                            background: black;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.noanimal-content {
+    text-align: center;
+
+    .add_new_animal {
+        display: flex;
+        flex-direction: column;
+        color: orange;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            transform: scale(1.01);
+        }
+
+        svg {
+            font-size: 25px;
+        }
+    }
+}

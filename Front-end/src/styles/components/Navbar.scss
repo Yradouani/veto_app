@@ -1,0 +1,112 @@
+.nav-active {
+    background: $color-1;
+
+    a {
+        color: inherit;
+
+        li {
+            color: $color-3;
+        }
+    }
+}
+
+.navbar {
+    background: transparent;
+    width: 100%;
+    color: $color-5;
+    display: flex;
+    justify-content: space-between;
+
+    .open-modal {
+        position: absolute;
+        background: $color-3;
+        border: 1px solid $color-5;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 60px;
+        z-index: 20;
+
+        span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px auto 20px;
+
+            button {
+                background: $color-1;
+                border: none;
+                padding: 10px 15px;
+                font-size: 15px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .logo {
+        width: 170px;
+        height: 80px;
+        margin-left: 20px;
+    }
+
+    #search_field {
+        background: white;
+        margin: 15px 25px;
+        border-radius: 10px;
+        height: 30px;
+        @include verticalCenter;
+
+        svg {
+            color: black;
+            margin-right: 10px;
+        }
+
+        #search_field_input {
+            border: none;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    ul {
+        padding: 0;
+        display: flex;
+        margin: 0;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+                background: $color-1;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                list-style-type: none;
+                padding: 35px;
+                transition: all 0.4s ease-in-out;
+                font-size: 17px;
+                color: $color-5;
+                font-weight: bold;
+
+                &:hover {
+                    color: $color-3;
+                }
+
+                svg {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+    margin: 20px auto;
+    padding: 0 20px;
+
+    thead {
+        border-bottom: 1px solid black;
+
+        tr {
+            border-bottom: 1px solid black;
+
+            th {
+                text-align: start;
+                padding-bottom: 10px;
+            }
+
+        }
+    }
+}

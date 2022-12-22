@@ -1,0 +1,548 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Microbe&family=Zen+Dots&display=swap");
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cabin', sans-serif;
+  height: 100%;
+  color: #63696e;
+}
+
+body .background {
+  position: absolute;
+  z-index: -10;
+}
+
+body .page_content {
+  width: 100%;
+  position: absolute;
+  right: 0;
+  height: 100%;
+}
+
+.nav-active {
+  background: #75b6fe;
+}
+
+.nav-active a {
+  color: inherit;
+}
+
+.nav-active a li {
+  color: #ffffff;
+}
+
+.navbar {
+  background: transparent;
+  width: 100%;
+  color: #63696e;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar .open-modal {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #63696e;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 60px;
+  z-index: 20;
+}
+
+.navbar .open-modal span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar .open-modal .btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px auto 20px;
+}
+
+.navbar .open-modal .btn-container button {
+  background: #75b6fe;
+  border: none;
+  padding: 10px 15px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.navbar .logo {
+  width: 170px;
+  height: 80px;
+  margin-left: 20px;
+}
+
+.navbar #search_field {
+  background: white;
+  margin: 15px 25px;
+  border-radius: 10px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar #search_field svg {
+  color: black;
+  margin-right: 10px;
+}
+
+.navbar #search_field #search_field_input {
+  border: none;
+}
+
+.navbar #search_field #search_field_input:focus {
+  outline: none;
+}
+
+.navbar ul {
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+.navbar ul a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navbar ul a li {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 35px;
+  transition: all 0.4s ease-in-out;
+  font-size: 17px;
+  color: #63696e;
+  font-weight: bold;
+}
+
+.navbar ul a li:hover {
+  background: #75b6fe;
+  color: #ffffff;
+}
+
+.navbar ul a li svg {
+  margin-right: 10px;
+}
+
+table {
+  width: 100%;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+table thead {
+  border-bottom: 1px solid black;
+}
+
+table thead tr {
+  border-bottom: 1px solid black;
+}
+
+table thead tr th {
+  text-align: start;
+  padding-bottom: 10px;
+}
+
+.customer .page_content header .add_new_client {
+  display: flex;
+  align-items: end;
+}
+
+.customer .page_content header .add_new_client .add_new_client_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.customer .page_content header .add_new_client .add_new_client_content:hover {
+  transform: scale(1.01);
+}
+
+.customer .page_content header .add_new_client svg {
+  font-size: 30px;
+  color: #75b6fe;
+}
+
+html {
+  height: 100%;
+}
+
+.home {
+  display: flex;
+  height: 100%;
+}
+
+.home .primary-part {
+  width: 50%;
+  background: #75b6fe;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home .primary-part .logo-container {
+  width: 100%;
+  margin-left: 30px;
+}
+
+.home .primary-part .logo-container .logo {
+  width: 250px;
+}
+
+.home .primary-part .logo-container p {
+  color: #ffffff;
+  margin: 0;
+}
+
+.home .primary-part .copyright {
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.home .second-part {
+  width: 50%;
+  background: #f2f4ff;
+}
+
+.header_content {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: rgba(174, 231, 193, 0.8);
+  padding: 40px 150px;
+  border-radius: 12px;
+}
+
+.second-part {
+  display: flex;
+}
+
+.connect_modal {
+  margin: auto 30px;
+  width: 100%;
+}
+
+.connect_modal h2 {
+  color: #63696e;
+  font-weight: bold;
+}
+
+.connect_modal .header_btn button {
+  border: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+  font-size: 16px;
+}
+
+.signup,
+.login {
+  background: #ffffff;
+  color: #75b6fe;
+  padding: 20px;
+  border-radius: 0 15px 15px 15px;
+  height: 380px;
+  box-shadow: 2px 2px 10px #d1d1d1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup table input,
+.login table input {
+  border: none;
+  background: #f2f4ff;
+  height: 18px;
+  box-shadow: 2px 2px 5px #d1d1d1;
+  padding: 0 10px;
+}
+
+.signup table input:focus,
+.login table input:focus {
+  outline: none;
+  color: #63696e;
+}
+
+.signup label,
+.login label {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.signup label span,
+.login label span {
+  display: flex;
+}
+
+.signup label svg,
+.login label svg {
+  margin-left: 10px;
+  height: 100%;
+}
+
+.signup .instructions,
+.login .instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  color: red;
+  padding: 0.25rem;
+  position: relative;
+}
+
+.signup .instructions svg,
+.login .instructions svg {
+  margin-right: 5px;
+}
+
+.signup .offscreen,
+.login .offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.signup .hide,
+.login .hide {
+  display: none;
+}
+
+.signup .valid,
+.login .valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.signup .invalid,
+.login .invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.signup .errmsg,
+.login .errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.signup h2,
+.login h2 {
+  margin: 0;
+}
+
+.signup tr,
+.signup td,
+.login tr,
+.login td {
+  padding: 5px;
+  position: relative;
+}
+
+.signup tr #firstnamenote,
+.signup tr #siretnote,
+.signup tr #lastnamenote,
+.signup tr #emailnote,
+.signup tr #passwordnote,
+.signup tr #confirmpasswordnote,
+.signup td #firstnamenote,
+.signup td #siretnote,
+.signup td #lastnamenote,
+.signup td #emailnote,
+.signup td #passwordnote,
+.signup td #confirmpasswordnote,
+.login tr #firstnamenote,
+.login tr #siretnote,
+.login tr #lastnamenote,
+.login tr #emailnote,
+.login tr #passwordnote,
+.login tr #confirmpasswordnote,
+.login td #firstnamenote,
+.login td #siretnote,
+.login td #lastnamenote,
+.login td #emailnote,
+.login td #passwordnote,
+.login td #confirmpasswordnote {
+  padding: 5px 10px;
+}
+
+.signup tr .eye,
+.signup td .eye,
+.login tr .eye,
+.login td .eye {
+  position: absolute;
+  color: black;
+  right: 25px;
+}
+
+.signup .password_content,
+.login .password_content {
+  display: flex;
+  align-items: center;
+}
+
+.signup .signup_submit,
+.login .signup_submit {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.signup .signup_submit input,
+.login .signup_submit input {
+  border: 2px solid #f2f4ff;
+  padding: 8px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  background: #75b6fe;
+  color: #ffffff;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.signup .signup_submit input:hover,
+.login .signup_submit input:hover {
+  background: #f2f4ff;
+  color: #63696e;
+  transform: scale(1.02);
+}
+
+.login form {
+  margin-top: 70px;
+}
+
+.customer .page_content tr,
+.customer .page_content td {
+  padding: 5px;
+}
+
+.customer .page_content .modal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 60px 40px;
+}
+
+.customer .page_content .modal_header svg {
+  cursor: pointer;
+}
+
+.customer .page_content .open_modal {
+  width: 90%;
+  background: white;
+  color: black;
+  position: absolute;
+  border: 1px solid black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 70px 30px;
+}
+
+.customer .page_content .open_modal form {
+  text-align: center;
+}
+
+.customer .page_content .open_modal input[type=submit] {
+  border: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  background: green;
+  margin: 20px auto;
+}
+
+.customer .page_content .open_modal .instructions {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  color: red;
+  padding: 0.25rem;
+  position: relative;
+}
+
+.customer .page_content .open_modal .instructions svg {
+  margin-right: 5px;
+}
+
+.customer .page_content .open_modal .offscreen {
+  position: absolute;
+  left: -9999px;
+}
+
+.customer .page_content .open_modal .hide {
+  display: none;
+}
+
+.customer .page_content .open_modal .valid {
+  color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.customer .page_content .open_modal .invalid {
+  color: red;
+  margin-left: 0.25rem;
+}
+
+.customer .page_content .open_modal .errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.customer .page_content .close_modal {
+  display: none;
+}
+
+.main-page .background {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -10;
+}
+
+.main-page .page_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-page .page_content h1 {
+  margin-right: 70px;
+  margin-top: 70px;
+}
+
+.main-page .page_content h2 {
+  font-size: 18px;
+  color: #ffc589;
+  font-weight: bold;
+  margin: 0;
+}
+/*# sourceMappingURL=index.css.map */

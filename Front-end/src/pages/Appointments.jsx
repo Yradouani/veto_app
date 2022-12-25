@@ -13,13 +13,16 @@ const Appointments = () => {
     const [veterinaryInfo, setVeterinaryInfo] = useState();
     const [name, setName] = useState("");
     const [isLoading, setIsLoading] = useState(true);
-    const [isCharging, setIsCharging] = useState(true);
 
 
     useEffect(() => {
         getAllAppointments();
         getInfoVeterinary();
     }, []);
+
+    // useEffect(() => {
+    //     getAnimalName();
+    // }, [])
 
     const dateFormateur = (date) => {
         let days = Math.floor((new Date() - new Date(date)) / (1000 * 3600 * 24))
@@ -45,29 +48,32 @@ const Appointments = () => {
     }
     const getAllAppointments = () => {
         axios.get("/user/client/" + idClient + "/appointment")
-            .then(function (response) {
+            .then(async function (response) {
+                const modifiedAppointments = await Promise.all(
+                    response.data.map(async appointment => {
+                            const animalName = await getAnimalName(appointment.animal_id);
+                            return {...appointment, animalName };
+                        })
+                )
                 console.log(response.data);
-                setAppointments(response.data);
+                setAppointments(modifiedAppointments);
 
             }
             )
             .catch(err => console.log(err))
     }
 
-    const getAnimalName = (idAnimal) => {
+    const getAnimalName = async (idAnimal) => {
         try {
+            const response = await
             axios.get("/animal/" + idAnimal)
-                .then(function (response) {
-                    console.log(response.data);
+                // .then(function (response) {
+                    console.log(response.data.name);
                     //         setAppointments(response.data);
-                    var nameAnimal = response.data.name;
-                    console.log(nameAnimal);
-                    // setName(nameAnimal);
 
-                    return nameAnimal;
-                })
-                .catch(err => console.log(err))
-            // setIsCharging(false);
+                    return response.data.name;
+                // })
+                // .catch(err => console.log(err))
         } catch (err) {
             console.log(err)
         }
@@ -97,21 +103,8 @@ const Appointments = () => {
                     </thead>
                     {appointments?.map(appointment => {
                         console.log(veterinaryInfo);
-                        // try {
-                        //     axios.get("/animal/" + appointment.animal_id)
-                        //         .then(function (response) {
-                        //             console.log(response.data);
-                        //             //         setAppointments(response.data);
-                        //             // name = response.data.name;
-                        //             console.log(response.data.name);
-                        //             console.log(appointments);
-                        //             // return name;
-                        //         }
-                        //         )
-                        //         .catch(err => console.log(err))
-                        // } catch (err) {
-                        //     console.log(err)
-                        // }
+                        // const animalName = getAnimalName(appointment?.animal_id);
+                       
                         return (
                             <tbody key={appointment.id}>
                                 <tr>
@@ -122,7 +115,7 @@ const Appointments = () => {
                                     <td>{appointment.date_of_appointment.split('-').reverse().join('/')}</td>
                                     <td>{appointment.appointment_object}</td>
                                     <td>{veterinaryInfo ? veterinaryInfo[0]?.firstname : ""} {veterinaryInfo ? veterinaryInfo[0]?.lastname : ""}</td>
-                                    <td>{getAnimalName(appointment?.animal_id)}</td>
+                                    <td>{appointment.animalName}</td>
                                     <td
                                         className={((dateFormateur(appointment.date_of_appointment) === "À venir") || (dateFormateur(appointment.date_of_appointment) === "Aujourd'hui")) ?
                                             "futur" : "past"}>

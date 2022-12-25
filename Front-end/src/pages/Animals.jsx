@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from '../api/axios';
 import { useState } from 'react';
 import { AiFillPlusCircle, AiOutlineSearch } from "react-icons/ai";
+import Loader from '../components/Loader';
 
 const Animals = () => {
     const [animals, setAnimals] = useState([]);
@@ -15,6 +16,7 @@ const Animals = () => {
     const [clientId, setClientId] = useState("");
     const [veterinaryId, setVeterinaryId] = useState("");
     const [search, setSearch] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
 
     const GET_ANIMALS = "/user/veterinary/";
 
@@ -61,6 +63,7 @@ const Animals = () => {
                     console.log(response.data.veterinary_id);
                     setData(infos);
                     setVeterinaryId(infos.veterinary_id);
+                    setIsLoading(false);
                 })
                 .catch(err => console.log(err))
         }
@@ -75,6 +78,7 @@ const Animals = () => {
                         const clientinfos = response.data;
                         console.log(response.data)
                         setData(clientinfos);
+                        setIsLoading(false);
                     })
                     .catch(err => console.log(err))
             }
@@ -113,6 +117,9 @@ const Animals = () => {
         navigate(`/profil_animal/id=${id}`);
     };
 
+    if (isLoading) {
+        return <Loader />;
+    }
     return (
         <div className='animals'>
             <img src="Untitled(1).png" alt="" className='background' />

@@ -41,7 +41,7 @@ const Appointments = () => {
             .then(function (response) {
                 console.log(response.data);
                 setVeterinaryInfo(response.data);
-                setIsLoading(false);
+                // setIsLoading(false);
             }
             )
             .catch(err => console.log(err))
@@ -57,6 +57,7 @@ const Appointments = () => {
                 )
                 console.log(response.data);
                 setAppointments(modifiedAppointments);
+                setIsLoading(false);
 
             }
             )
